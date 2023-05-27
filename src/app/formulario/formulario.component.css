@@ -1,0 +1,125 @@
+.image-dish{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+  
+
+.image-dish img{
+    width: 80%;
+}
+
+.title h2{
+  color:#862234;
+}
+
+.captcha-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-input {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-custom{
+  background-color: #862234;
+  color: white;
+}
+
+.btn-custom:hover{
+  background-color: #a92e45;
+}
+
+.btn-reserva button{
+  padding: 8px 5%;
+}
+
+.custom-form input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*oculatr icono de incremento y decremento en input type number */
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.no-spin {
+    -moz-appearance: textfield;
+}
+
+
+/************************************Svg wave*/
+.custom-shape-divider-top-1685213912 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1685213912 svg {
+  position: relative;
+  display: block;
+  width: calc(221% + 1.3px);
+  height: 752px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1685213912 .shape-fill {
+  fill: #F2ECEC;
+}
+
+.form-reserva {
+  position: relative; 
+  z-index: 1;
+}
+
+
+/*Captcha***************/
+.captcha-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-container-captcha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 105px; 
+
+}
+
+.captcha-container p{
+  font-family: 'Allura', cursive;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.captcha-icon{
+  position: absolute;
+  padding-left: 120px;
+}
+
+.captcha-icon i:hover{
+  cursor: pointer;
+}
+
+/*Contador de cupos*/
+.contador{
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
