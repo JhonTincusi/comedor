@@ -8,6 +8,27 @@
     Cupos disponibles: {{ contador }}
 </div>
 
+
+<!-- Alerta Modal HTML -->
+<div id="myModal" class="modal fade" *ngIf="mostrarModal">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="fa-solid fa-check"></i>
+				</div>				
+				<h4 class="modal-title">Felicidades!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">Has reservado el cupo número: {{contador}}</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div> 
+
   
 <div class="container"> 
     <div class="row align-items-center">
@@ -20,28 +41,17 @@
                     </div>
                     
                     
-                    <div class="mb-5 custom-input" style="position: relative;">
+                    <div class="mb-5 custom-input">
                         <label for="codigo" class="form-label">CÓDIGO</label>
                         <input type="number" name="codigo" class="form-control no-spin" [(ngModel)]="alumno.codigo" required #codigo="ngModel">
-                        <div class="alert alert-danger" [hidden]="codigo.valid || codigo.pristine" style="position: absolute; top: 100%; left: 0; height: 30px; max-height: 30px; overflow: hidden; width: 100%;">
-                            <div style="display: flex; align-items: center; height: 100%;">
-                                <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">El código debe ser obligatorio</span>
-                            </div>
-                        </div>
-                    </div>
+                        
+                      </div>
                     
-                    
-                    
-                    <div class="mb-5 custom-input" style="position: relative;">
+                      <div class="mb-5 custom-input">
                         <label for="password" class="form-label">CONTRASEÑA</label>
-                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="alumno.password" required="" #password="ngModel">
-                        <div class="alert alert-danger" [hidden]="password.valid || password.pristine" style="position: absolute; top: 100%; left: 0; height: 30px; max-height: 30px; overflow: hidden; width: 100%;" >
-                            <div style="display: flex; align-items: center; height: 100%;">
-                                <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">La contraseña es obligatoria</span>
-                            </div>
-                        </div>
-                    </div>
-                    
+                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="alumno.password" required #password="ngModel">
+                        
+                      </div>
 
                     <!-- Captcha generate-->
                     <div class="captcha-container">
@@ -53,20 +63,14 @@
                         </div>
                     </div>
                       
-
-                    <div class="mb-5 custom-input" style="position: relative;">
+                    <div class="mb-5 custom-input">
                         <label for="captcha" class="form-label">CAPTCHA</label>
-                        <input type="text" name="captcha" class="form-control" [(ngModel)]="alumno.captchaInput" required="" #captchaInput="ngModel">
-                        <div class="alert alert-danger" [hidden]="captchaInput.valid || captchaInput.pristine" style="position: absolute; top: 100%; left: 0; height: 30px; max-height: 30px; overflow: hidden; width: 100%;">
-                            <div style="display: flex; align-items: center; height: 100%;">
-                                <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">El CAPTCHA es obligatorio</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-
+                        <input type="text" name="captcha" class="form-control" [(ngModel)]="alumno.captchaInput" required #captchaInput="ngModel">
+                        
+                      </div>
+                      
                     <div class="btn-reserva custom-input text-center">
-                        <button type="submit" class="btn btn-custom" (click)="reservar()">Reservar</button>
+                        <button href="#myModal"  type="submit" class="btn btn-custom" data-toggle="modal" (click)="reservar()">Reservar</button>
                     </div>
                 </form>
             </div>

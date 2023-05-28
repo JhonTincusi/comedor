@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+  
   alumno = {
     codigo: '',
     password: '',
     captchaInput: ''
   }
 
-  /**Procesar formulario */
   procesar(){
     
   }
@@ -42,19 +42,33 @@ export class FormularioComponent implements OnInit {
     return result;
   }
 
+  /**Modal de confirmacion */
+  mostrarModal: boolean = false;
 
-  /**Codigo para contador de cupos */
+
+  /*Contador de cupos */
   contador: number = 1200;
+
 
   /**Disminuid contador de cupos al darle click al boton reservar */
   reservar(): void {
     if (this.contador > 0 && this.alumno.codigo !== '' && this.alumno.password !== '' && this.alumno.captchaInput !== '') {
       this.contador--;
+
+      this.mostrarModal = true;
+
+      /**limpiar los campos de input*/
+      this.alumno.codigo = '';
+      this.alumno.password = '';
+      this.alumno.captchaInput = '';
+
     }
+    else
+    {
+      this.mostrarModal = false;
+    }
+
   }
 
-
-
-  
   
 }
